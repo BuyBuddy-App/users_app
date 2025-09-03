@@ -1,3 +1,17 @@
 {
-    
+  "auth": {
+    "auth_initial": {
+      "name": "BuyBuddy",
+      "hock": "Your style, your brand — all \n in one place.",
+      "sign_up": "Sign Up",
+      "sign_up_brand": "Sign up your Brand",
+      "or": "or",
+      "continue_with_google": "Continue with Google",
+      "already_have_account": "Already have an account?",
+      "login": "Log in"
+    },
+    "auth_login": {
+      "name": "name"
+    }
+  }
 }
