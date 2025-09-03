@@ -38,7 +38,7 @@ class CustomTextFormField extends StatelessWidget {
 
         decoration: InputDecoration(
           filled: true,
-          fillColor: AppColors.button_background,
+          fillColor: AppColors.buttonBackground,
           hintText: hintText,
           labelText: labelText,
           prefixIcon: prefixIcon != null ? Icon(prefixIcon) : null,
@@ -56,13 +56,13 @@ class CustomTextFormField extends StatelessWidget {
           enabledBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(8),
             borderSide: BorderSide(
-              color: AppColors.button_background, // your theme color
+              color: AppColors.buttonBackground, // your theme color
               width: 1,
             ),
           ),
           focusedBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(8),
-            borderSide: BorderSide(color: AppColors.focusborder, width: 1),
+            borderSide: BorderSide(color: AppColors.focusBorder, width: 1),
           ),
         ),
       ),
