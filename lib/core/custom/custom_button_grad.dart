@@ -1,7 +1,7 @@
 import 'package:buy_buddy_user_app/core/utils/app_colors.dart';
 import 'package:flutter/material.dart';
 
-class GradientBorderMaterialButton extends StatelessWidget {
+class CustomButtonGrad extends StatelessWidget {
   final String text;
   final VoidCallback onPressed;
   final Color? background;
@@ -10,7 +10,7 @@ class GradientBorderMaterialButton extends StatelessWidget {
   final double borderWidth;
   final EdgeInsetsGeometry padding;
 
-  const GradientBorderMaterialButton({
+  const CustomButtonGrad({
     super.key,
     required this.text,
     required this.onPressed,
@@ -27,13 +27,13 @@ class GradientBorderMaterialButton extends StatelessWidget {
       height: 52,
       width: double.infinity,
       decoration: BoxDecoration(
-        gradient: LinearGradient(colors: AppColors.grad),
+        gradient: LinearGradient(colors: AppColors.gradColors),
         borderRadius: BorderRadius.circular(borderRadius),
       ),
       child: Container(
         margin: EdgeInsets.all(borderWidth), // thickness of border
         decoration: BoxDecoration(
-          color: background ?? AppColors.button_background,
+          color: background ?? AppColors.buttonBackground,
           borderRadius: BorderRadius.circular(borderRadius - borderWidth),
         ),
         child: InkWell(
@@ -45,7 +45,7 @@ class GradientBorderMaterialButton extends StatelessWidget {
               child: Text(
                 text,
                 style: TextStyle(
-                  color: textColor ?? AppColors.onprimary,
+                  color: textColor ?? AppColors.onPrimary,
                   fontSize: 16,
                   fontWeight: FontWeight.w600,
                 ),
