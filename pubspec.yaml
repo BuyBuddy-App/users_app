@@ -23,6 +23,7 @@ dependencies:
   dio_cookie_manager: ^3.2.0
   cookie_jar: ^4.0.8
   path_provider: ^2.1.5 
+  easy_localization: ^3.0.8
 
 dev_dependencies:
   flutter_test:
@@ -34,6 +35,7 @@ flutter:
   assets:
     - assets/images/
     - assets/svgs/
+    - assets/translations/
 
 
 # flutter_assets:
