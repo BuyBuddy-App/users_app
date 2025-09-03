@@ -19,9 +19,7 @@ class ApiInterceptor extends Interceptor {
     options.headers['Accept-language'] = "en";
     options.extra['withCredentials'] = true;
 
-    final token = await AppStorageHelper.getSecureData(
-      StorageKeys.accessToken.name,
-    );
+    final token = await AppStorageHelper.getSecureData(StorageKeys.accessToken);
 
     if (token != null) {
       options.headers['Authorization'] = 'Bearer $token';
@@ -69,7 +67,7 @@ class ApiInterceptor extends Interceptor {
 
     final newAccessToken = refreshResponse.data[ApiKeys.accessToken];
     await AppStorageHelper.setSecureData(
-      StorageKeys.accessToken.name,
+      StorageKeys.accessToken,
       newAccessToken,
     );
 
@@ -82,9 +80,9 @@ class ApiInterceptor extends Interceptor {
     ErrorInterceptorHandler handler,
     DioException err,
   ) async {
-    await AppStorageHelper.deleteSecureData(StorageKeys.accessToken.name);
+    await AppStorageHelper.deleteSecureData(StorageKeys.accessToken);
 
-    await AppStorageHelper.setBool(StorageKeys.isLoggedIn.name, false);
+    await AppStorageHelper.setBool(StorageKeys.isLoggedIn, false);
 
     if (navigatorKey.currentContext == null) {
       debugPrint("Navigator context is null ,can`t navigate to login screen");
