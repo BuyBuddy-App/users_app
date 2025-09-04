@@ -1,4 +1,19 @@
 {
+  "validation": {
+    "field_is_required": "Field is required",
+    "email_is_required": "Email is required",
+    "invalid_email": "Please enter a valid email address",
+    "password_is_required": "Password is required",
+    "password_too_short": "Password must be at least 8 characters long",
+    "phone_is_required": "Phone number is required",
+    "invalid_phone": "Please enter a valid phone number",
+    "age_is_required": "Age is required",
+    "invalid_age": "Please enter a valid age",
+    "age_too_young": "Age must be 14 or older",
+    "age_too_old": "Please enter a realistic age",
+    "confirm_password_is_required": "Confirm password is required.",
+    "passwords_do_not_match": "Passwords do not match."
+  },
   "auth": {
     "auth_initial": {
       "name": "BuyBuddy",

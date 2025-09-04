@@ -25,6 +25,7 @@ dependencies:
   path_provider: ^2.1.5 
   easy_localization: ^3.0.8
   google_fonts: ^6.3.1
+  modal_progress_hud_nsn: ^0.5.1
 
 dev_dependencies:
   flutter_test:
