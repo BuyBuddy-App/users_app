@@ -1,73 +1,70 @@
-import 'package:buy_buddy_user_app/core/utils/app_strings.dart';
-import 'package:flutter/material.dart';
+import 'package:easy_localization/easy_localization.dart';
+import 'package:buy_buddy_user_app/translations/codegen_loader.g.dart';
 
 class Validators {
-  static String? validateNormalText(BuildContext context, String? value) {
+  static String validateNormalText(String? value) {
     if (value == null || value.isEmpty) {
-      return AppStrings.fieldIsRequired;
+      return LocaleKeys.validationFieldIsRequired.tr();
     }
-    return null;
+    return '';
   }
 
-  static String? validateEmail(BuildContext context, String? value) {
-    const String emailPattern =
-        r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$';
-    final RegExp regex = RegExp(emailPattern);
+  static String validateEmail(String? value) {
+    const emailPattern = r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$';
+    final regex = RegExp(emailPattern);
     if (value == null || value.isEmpty) {
-      return AppStrings.emailIsRequired;
+      return LocaleKeys.validationEmailIsRequired.tr();
     } else if (!regex.hasMatch(value)) {
-      return AppStrings.invalidEmail;
+      return LocaleKeys.validationInvalidEmail.tr();
     }
-    return null;
+    return '';
   }
 
-  static String? validatePassword(BuildContext context, String? value) {
+  static String validatePassword(String? value) {
     if (value == null || value.isEmpty) {
-      return AppStrings.passwordIsRequired;
+      return LocaleKeys.validationPasswordIsRequired.tr();
     } else if (value.length < 8) {
-      return AppStrings.passwordTooShort;
+      return LocaleKeys.validationPasswordTooShort.tr();
     }
-    return null;
+    return '';
   }
 
-  static String? confirmPasswordValidator(
-      BuildContext context, String? value, String? password) {
+  static String confirmPasswordValidator(String? value, String? password) {
     if (value == null || value.isEmpty) {
-      return AppStrings.confirmPasswordIsRequired;
+      return LocaleKeys.validationConfirmPasswordIsRequired.tr();
     } else if (password == null || password.isEmpty) {
-      return AppStrings.passwordIsRequired;
+      return LocaleKeys.validationPasswordIsRequired.tr();
     } else if (value != password) {
-      return AppStrings.passwordsDoNotMatch;
-    } else {
-      return null;
+      return LocaleKeys.validationPasswordsDoNotMatch.tr();
     }
+    return '';
   }
 
-  static String? validatePhoneNumber(BuildContext context, String? value) {
-    const String phonePattern = r'^\+?[0-9]{11}$';
-    final RegExp regex = RegExp(phonePattern);
+  static String validatePhoneNumber(String? value) {
+    const phonePattern = r'^\+?[0-9]{11}$';
+    final regex = RegExp(phonePattern);
     if (value == null || value.isEmpty) {
-      return AppStrings.phoneIsRequired;
+      return LocaleKeys.validationPhoneIsRequired.tr();
     } else if (!regex.hasMatch(value)) {
-      return AppStrings.invalidPhone;
+      return LocaleKeys.validationInvalidPhone.tr();
     }
-    return null;
+    return '';
   }
 
-  static String? validateAge(BuildContext context, String? value) {
+  static String validateAge(String? value) {
     if (value == null || value.isEmpty) {
-      return AppStrings.ageIsRequired;
+      return LocaleKeys.validationAgeIsRequired.tr();
     }
     final age = int.tryParse(value);
     if (age == null || age <= 0) {
-      return AppStrings.invalidAge;
+      return LocaleKeys.validationInvalidAge.tr();
     }
     if (age < 14) {
-      return AppStrings.ageTooYoung;
+      return LocaleKeys.validationAgeTooYoung.tr();
     }
-    if (age > 150) {
-      return AppStrings.ageTooOld;
+    if (age > 120) {
+      return LocaleKeys.validationAgeTooOld.tr();
     }
-    return null;
+    return '';
   }
 }
