@@ -3,6 +3,7 @@ import 'package:buy_buddy_user_app/core/custom/custom_button_grad.dart';
 import 'package:buy_buddy_user_app/core/custom/custom_text_form_field.dart';
 import 'package:buy_buddy_user_app/core/custom/vertical_gap.dart';
 import 'package:buy_buddy_user_app/core/utils/app_colors.dart';
+import 'package:buy_buddy_user_app/core/utils/app_routes.dart';
 import 'package:buy_buddy_user_app/core/utils/validators.dart';
 import 'package:buy_buddy_user_app/features/auth/presentation/widgets/auth_switch_widget.dart';
 import 'package:buy_buddy_user_app/translations/codegen_loader.g.dart';
@@ -143,7 +144,9 @@ class _LoginBodyState extends State<LoginBody> {
                         AuthSwitchWidget(
                           text: LocaleKeys.authLoginDontHaveAccount.tr(),
                           actionText: LocaleKeys.authInitialSignUp.tr(),
-                          onActionTap: () {},
+                          onActionTap: () {
+                            Navigator.pushNamed(context, Routes.signUpScreen);
+                          },
                         ),
                       ],
                     ),
