@@ -56,3 +56,6 @@ app.*.map.json
 
 /windows/flutter/ephemeral/
 /linux/flutter/ephemeral/
+
+# Android build reports (auto-generated)
+android/build/
