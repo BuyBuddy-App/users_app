@@ -8,7 +8,7 @@ class CustomTextFormField extends StatelessWidget {
   final IconData? suffixIcon;
   final TextInputType keyboardType;
   final bool obscureText;
-  final String? Function(String?)? validator;
+  final String Function(String?)? validator;
   final TextEditingController? controller;
   final VoidCallback? onSuffixTap;
 

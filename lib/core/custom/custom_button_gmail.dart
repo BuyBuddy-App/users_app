@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 class CustomButtonGmail extends StatelessWidget {
   final String text;
   final VoidCallback onPressed;
-  final String imagePath;
+  final String? imagePath;
   final Color? background;
   final Color? textColor;
   final double borderRadius;
@@ -13,7 +13,7 @@ class CustomButtonGmail extends StatelessWidget {
 
   const CustomButtonGmail({
     super.key,
-    required this.imagePath,
+    this.imagePath,
     required this.text,
     required this.onPressed,
     this.background,
@@ -35,14 +35,12 @@ class CustomButtonGmail extends StatelessWidget {
       child: MaterialButton(
         onPressed: onPressed,
         child: Row(
+          spacing: 5,
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Image.asset(
-              "assets/images/flat-color-icons_google.png",
-              height: 5,
-              width: 5,
-            ),
+            Icon(Icons.email_outlined),
+
             Text(
               text,
               style: TextStyle(

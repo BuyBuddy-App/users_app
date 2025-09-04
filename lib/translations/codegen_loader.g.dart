@@ -3,15 +3,66 @@
 // ignore_for_file: constant_identifier_names
 
 abstract class LocaleKeys {
-  static const auth_initial_name = 'auth.auth_initial.name';
-  static const auth_initial_hock = 'auth.auth_initial.hock';
-  static const auth_initial_sign_up = 'auth.auth_initial.sign_up';
-  static const auth_initial_sign_up_brand = 'auth.auth_initial.sign_up_brand';
-  static const auth_initial_or = 'auth.auth_initial.or';
-  static const auth_initial_continue_with_google =
-      'auth.auth_initial.continue_with_google';
-  static const auth_initial_already_have_account =
-      'auth.auth_initial.already_have_account';
-  static const auth_initial_login = 'auth.auth_initial.login';
-  static const auth_login_name = 'auth.auth_login.name';
+  // auth_initial
+  static const authInitialName = "auth.auth_initial.name";
+  static const authInitialHook = "auth.auth_initial.hook";
+  static const authInitialSignUp = "auth.auth_initial.sign_up";
+  static const authInitialSignUpBrand = "auth.auth_initial.sign_up_brand";
+  static const authInitialOr = "auth.auth_initial.or";
+  static const authInitialContinueWithGoogle =
+      "auth.auth_initial.continue_with_google";
+  static const authInitialAlreadyHaveAccount =
+      "auth.auth_initial.already_have_account";
+  static const authInitialLogin = "auth.auth_initial.login";
+
+  // auth_login
+  static const authLoginTitle = "auth.auth_login.title";
+  static const authLoginYourAccount = "auth.auth_login.login_your_account";
+  static const authLoginEmail = "auth.auth_login.email";
+  static const authLoginEmailError = "auth.auth_login.email_error";
+  static const authLoginPassword = "auth.auth_login.password";
+  static const authLoginPasswordError = "auth.auth_login.password_error";
+  static const authLoginRememberMe = "auth.auth_login.remember_me";
+  static const authLoginForgotPassword = "auth.auth_login.forgot_password";
+  static const authLogin = "auth.auth_login.login";
+  static const authLoginDontHaveAccount = "auth.auth_login.dont_have_account";
+
+  // reset_password
+  static const resetPasswordTitle = "auth.reset_password.reset_password";
+  static const resetPasswordCreatePass =
+      "auth.reset_password.create_your_new_pass";
+  static const resetPasswordNewPassword = "auth.reset_password.new_password";
+  static const resetPasswordNewPasswordError =
+      "auth.reset_password.new_password_error";
+  static const resetPasswordConfirmPassword =
+      "auth.reset_password.confirm_password";
+  static const resetPasswordConfirmPasswordError =
+      "auth.reset_password.confirm_password_error";
+
+  // auth_sign_up
+  static const authSignUpCreateAccount =
+      "auth.auth_sign_up.create_your_new_account";
+  static const authSignUpFullName = "auth.auth_sign_up.full_name";
+  static const authSignUpFullNameError = "auth.auth_sign_up.full_name_error";
+  static const authSignUpEmail = "auth.auth_sign_up.email";
+  static const authSignUpUserName = "auth.auth_sign_up.user_name";
+  static const authSignUpUserNameError = "auth.auth_sign_up.user_name_error";
+  static const authSignUpPrivacyAgreement =
+      "auth.auth_sign_up.privacy_agreement";
+
+  // auth_verify
+  static const authVerifyCheckEmail = "auth.auth_verify.check_email";
+  static const authVerifyDescription = "auth.auth_verify.description";
+  static const authVerifyEnterDigits = "auth.auth_verify.enter_digits";
+  static const authVerifySendAgain = "auth.auth_verify.send_again";
+
+  // auth_profile
+  static const authProfileSkip = "auth.auth_profile.skip";
+  static const authProfileFillProfile = "auth.auth_profile.fill_profile";
+  static const authProfileUploadImage = "auth.auth_profile.upload_image";
+  static const authProfilePhoneNumber = "auth.auth_profile.phone_number";
+  static const authProfilePhoneNumberError =
+      "auth.auth_profile.phone_number_error";
+  static const authProfileGender = "auth.auth_profile.gender";
+  static const authProfileSelectGender = "auth.auth_profile.select_gender";
 }

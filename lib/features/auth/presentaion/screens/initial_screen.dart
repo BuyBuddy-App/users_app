@@ -15,7 +15,7 @@ class InitialScreen extends StatelessWidget {
     return Scaffold(
       body: SafeArea(
         child: Padding(
-          padding: EdgeInsetsGeometry.symmetric(horizontal: 10, vertical: 10),
+          padding: EdgeInsetsGeometry.all(15),
           child: Container(
             width: double.infinity,
             child: Column(
@@ -40,7 +40,7 @@ class InitialScreen extends StatelessWidget {
                 ),
                 //hock statement
                 Text(
-                  LocaleKeys.auth_initial_hock.tr(),
+                  LocaleKeys.authInitialHook.tr(),
                   style: GoogleFonts.playfairDisplay(
                     color: AppColors.onPrimary,
                     fontSize: 24,
@@ -53,11 +53,11 @@ class InitialScreen extends StatelessWidget {
                   spacing: 10,
                   children: [
                     CustomButtonGrad(
-                      text: LocaleKeys.auth_initial_sign_up.tr(),
+                      text: LocaleKeys.authInitialSignUp.tr(),
                       onPressed: () {},
                     ),
                     CustomButtonGrad(
-                      text: LocaleKeys.auth_initial_sign_up_brand.tr(),
+                      text: LocaleKeys.authInitialSignUpBrand.tr(),
                       onPressed: () {},
                     ),
 
@@ -75,7 +75,7 @@ class InitialScreen extends StatelessWidget {
                               thickness: 7,
                             ),
                           ),
-                          Text(LocaleKeys.auth_initial_or.tr()),
+                          Text(LocaleKeys.authInitialOr.tr()),
                           Expanded(
                             child: Divider(
                               color: AppColors.buttonBackground,
@@ -89,9 +89,33 @@ class InitialScreen extends StatelessWidget {
                     ),
                     // signin with gmail
                     CustomButtonGmail(
-                      imagePath: "assets/images/flat-color-icons_google.png",
-                      text: "Continue with google",
+                      text: LocaleKeys.authInitialContinueWithGoogle.tr(),
                       onPressed: () {},
+                    ),
+                  ],
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Text(
+                      LocaleKeys.authInitialAlreadyHaveAccount.tr(),
+                      style: TextStyle(
+                        color: AppColors.onPrimary,
+                        fontSize: 12,
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
+                    TextButton(
+                      onPressed: () {},
+                      child: Text(
+                        LocaleKeys.authInitialLogin.tr(),
+                        style: TextStyle(
+                          fontSize: 12,
+                          fontWeight: FontWeight.w500,
+                          color: Color(0xffC3B7E1),
+                        ),
+                      ),
                     ),
                   ],
                 ),
