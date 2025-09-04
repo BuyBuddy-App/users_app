@@ -1,3 +1,58 @@
 {
-    
+  "auth": {
+    "auth_initial": {
+      "name": "BuyBuddy",
+      "hook": "Your style, your brand — all \n in one place.",
+      "sign_up": "Sign Up",
+      "sign_up_brand": "Sign up your Brand",
+      "or": "or",
+      "continue_with_google": "Continue with Google",
+      "already_have_account": "Already have an account?",
+      "login": "Log in"
+    },
+    "auth_login": {
+      "title": "Welcome Back!",
+      "login_your_account": "Log in to your account",
+      "email": "Email",
+      "email_error": "Enter your email address",
+      "password": "Password",
+      "password_error": "Enter your password",
+      "remember_me": "Remember me",
+      "forgot_password": "Forgot Password?",
+      "login": "Log in",
+      "dont_have_account": "Don’t have an account?"
+    },
+    "reset_password": {
+      "reset_password": "Reset your password",
+      "create_your_new_pass": "Create your new password",
+      "new_password": "New Password",
+      "new_password_error": "Enter your new password",
+      "confirm_password": "Confirm Password",
+      "confirm_password_error": "Enter your new password again"
+    },
+    "auth_sign_up": {
+      "create_your_new_account": "Create your account",
+      "full_name": "Full Name",
+      "full_name_error": "Enter your full name",
+      "email": "Email",
+      "user_name": "Username",
+      "user_name_error": "Create your username",
+      "privacy_agreement": "I agree to the Terms & Conditions and Privacy Policy"
+    },
+    "auth_verify": {
+      "check_email": "Check your email",
+      "description": "Please check your email. We've sent\nyou a confirmation code.",
+      "enter_digits": "Enter the 6-digit code we sent\nto your email",
+      "send_again": "Resend Code"
+    },
+    "auth_profile": {
+      "skip": "Skip for now",
+      "fill_profile": "Fill in your profile",
+      "upload_image": "Upload your photo",
+      "phone_number": "Phone Number",
+      "phone_number_error": "Enter your phone number",
+      "gender": "Gender",
+      "select_gender": "Select your gender"
+    }
+  }
 }

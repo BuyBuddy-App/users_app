@@ -4,7 +4,9 @@ import 'package:buy_buddy_user_app/core/helpers/app_storage_helper.dart';
 import 'package:buy_buddy_user_app/core/helpers/on_generate_routes.dart';
 import 'package:buy_buddy_user_app/core/services/custom_bloc_observer.dart';
 import 'package:buy_buddy_user_app/core/services/get_it_service.dart';
+import 'package:buy_buddy_user_app/features/auth/presentaion/screens/initial_screen.dart';
 import 'package:buy_buddy_user_app/core/utils/app_themes.dart';
+import 'package:buy_buddy_user_app/features/auth/presentaion/screens/login_screen.dart';
 import 'package:device_preview/device_preview.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/foundation.dart';
@@ -63,7 +65,7 @@ class _BuyBuddyUserAppState extends State<BuyBuddyUserApp> {
             supportedLocales: context.supportedLocales,
             locale: context.locale,
             onGenerateRoute: onGenerateRoutes,
-            home: Center(child: Text("hello")),
+            home: LoginScreen(),
           );
         },
       ),
