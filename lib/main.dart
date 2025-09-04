@@ -63,7 +63,7 @@ class _BuyBuddyUserAppState extends State<BuyBuddyUserApp> {
                 debugShowCheckedModeBanner: false,
                 theme: AppTheme.lightTheme,
                 darkTheme: AppTheme.darkTheme,
-                themeMode: ThemeMode.dark,
+                themeMode: appThemeCubit.getTheme(),
                 localizationsDelegates: context.localizationDelegates,
                 supportedLocales: context.supportedLocales,
                 locale: context.locale,
