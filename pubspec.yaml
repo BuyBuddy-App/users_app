@@ -47,12 +47,12 @@ flutter:
 #   field_prefix: null
 #   classname: AppSvgs
 
-# flutter_assets:
-#   assets_path: assets/images
-#   output_path: lib/core/utils
-#   filename: app_images.dart
-#   field_prefix: null
-#   classname: AppImages
+flutter_assets:
+  assets_path: assets/images
+  output_path: lib/core/utils
+  filename: app_images.dart
+  field_prefix: null
+  classname: AppImages
 
 # flutter_assets:
 #   assets_path: assets/animations
