@@ -1,3 +1,5 @@
+import 'package:buy_buddy_user_app/core/cubits/app_theme_cubit/app_theme_cubit.dart';
+import 'package:buy_buddy_user_app/core/cubits/app_theme_cubit/app_theme_state.dart';
 import 'package:buy_buddy_user_app/core/helpers/app_storage_helper.dart';
 import 'package:buy_buddy_user_app/core/helpers/on_generate_routes.dart';
 import 'package:buy_buddy_user_app/core/services/custom_bloc_observer.dart';
@@ -32,21 +34,41 @@ Future<void> main() async {
   );
 }
 
-class BuyBuddyUserApp extends StatelessWidget {
+class BuyBuddyUserApp extends StatefulWidget {
   const BuyBuddyUserApp({super.key});
 
   @override
+  State<BuyBuddyUserApp> createState() => _BuyBuddyUserAppState();
+}
+
+class _BuyBuddyUserAppState extends State<BuyBuddyUserApp> {
+  late AppThemeCubit appThemeCubit;
+
+  @override
+  void initState() {
+    super.initState();
+    appThemeCubit = AppThemeCubit();
+  }
+
+  @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      theme: AppTheme.lightTheme,
-      darkTheme: AppTheme.darkTheme,
-      themeMode: ThemeMode.dark,
-      localizationsDelegates: context.localizationDelegates,
-      supportedLocales: context.supportedLocales,
-      locale: context.locale,
-      debugShowCheckedModeBanner: false,
-      onGenerateRoute: onGenerateRoutes,
-      home: LoginScreen(),
+    return BlocProvider(
+      create: (context) => appThemeCubit,
+      child: BlocBuilder<AppThemeCubit, AppThemeState>(
+        builder: (context, state) {
+          return MaterialApp(
+            debugShowCheckedModeBanner: false,
+            theme: AppTheme.lightTheme,
+            darkTheme: AppTheme.darkTheme,
+            themeMode: appThemeCubit.getTheme(),
+            localizationsDelegates: context.localizationDelegates,
+            supportedLocales: context.supportedLocales,
+            locale: context.locale,
+            onGenerateRoute: onGenerateRoutes,
+            home: LoginScreen(),
+          );
+        },
+      ),
     );
   }
 }

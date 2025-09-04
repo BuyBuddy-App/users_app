@@ -1,3 +1,5 @@
+import 'package:buy_buddy_user_app/core/constants/failure_messages.dart';
+
 abstract class Failure {
   final String message;
 
@@ -9,6 +11,6 @@ abstract class Failure {
 
 class CustomException extends Failure {
   const CustomException({
-    String message = "Something went wrong. Please try again later.",
+    String message = FailureMessages.unexpectedError,
   }) : super(message);
 }
