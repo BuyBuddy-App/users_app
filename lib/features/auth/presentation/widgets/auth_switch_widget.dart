@@ -2,45 +2,45 @@ import 'package:buy_buddy_user_app/core/utils/app_colors.dart';
 import 'package:flutter/material.dart';
 
 class AuthSwitchWidget extends StatelessWidget {
-  final String promptText;
+  final String text;
   final String actionText;
-  final VoidCallback onActionPressed;
-  final Color? promptTextColor;
-  final Color? actionTextColor;
-  final double? promptTextSize;
-  final double? actionTextSize;
+  final VoidCallback onActionTap;
+  final Color textColor;
+  final Color actionColor;
+  final double fontSize;
+
   const AuthSwitchWidget({
     super.key,
-    required this.promptText,
+    required this.text,
     required this.actionText,
-    required this.onActionPressed,
-    this.promptTextColor,
-    this.actionTextColor = AppColors.primary,
-    this.promptTextSize = 18,
-    this.actionTextSize = 24,
+    required this.onActionTap,
+    this.textColor = AppColors.onPrimary,
+    this.actionColor = AppColors.actionColor,
+    this.fontSize = 12,
   });
 
   @override
   Widget build(BuildContext context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         Text(
-          promptText,
+          text,
           style: TextStyle(
-            color: AppColors.onPrimary,
-            fontSize: 12,
+            color: textColor,
+            fontSize: fontSize,
             fontWeight: FontWeight.w500,
           ),
         ),
         TextButton(
-          onPressed: onActionPressed,
+          onPressed: onActionTap,
           child: Text(
             actionText,
             style: TextStyle(
-              fontSize: 12,
+              fontSize: fontSize,
               fontWeight: FontWeight.w500,
-              color: Color(0xffC3B7E1),
+              color: actionColor,
             ),
           ),
         ),

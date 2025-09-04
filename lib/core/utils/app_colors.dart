@@ -5,6 +5,8 @@ class AppColors {
   static const Color onPrimary = Colors.white;
   static const Color buttonBackground = Color(0xff222222);
   static const Color focusBorder = Color(0xff8770C2);
+  static const Color actionColor = Color(0xffC3B7E1);
+
   static const List<Color> gradColors = [
     Color(0xffFFCC60),
     Color(0xffAC8DD8),
