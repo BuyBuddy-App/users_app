@@ -1,6 +1,4 @@
 class AppStrings {
-  static const String appTitle = "WhatsApp Clone";
-
   static const String fieldIsRequired = "Field is required";
   static const String emailIsRequired = "Email is required";
   static const String invalidEmail = "Please enter a valid email address";

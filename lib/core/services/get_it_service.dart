@@ -2,6 +2,8 @@ import 'dart:io';
 
 import 'package:buy_buddy_user_app/core/api/api_consumer.dart';
 import 'package:buy_buddy_user_app/core/api/dio_consumer.dart';
+import 'package:buy_buddy_user_app/features/auth/data/repos_impl/auth_repo_impl.dart';
+import 'package:buy_buddy_user_app/features/auth/domain/repos/auth_repo.dart';
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:cookie_jar/cookie_jar.dart';
 import 'package:dio/dio.dart';
@@ -24,7 +26,10 @@ Future<void> setupGetIt() async {
 
   getIt.registerSingleton<CookieJar>(cookieJar);
 
-  // dio
   getIt.registerSingleton<Dio>(Dio());
   getIt.registerSingleton<ApiConsumer>(DioConsumer(dio: getIt<Dio>()));
+
+  getIt.registerSingleton<AuthRepo>(
+    AuthRepoImpl(apiConsumer: getIt<ApiConsumer>()),
+  );
 }
