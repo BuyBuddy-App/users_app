@@ -1,4 +1,5 @@
 import 'package:buy_buddy_user_app/core/utils/app_colors.dart';
+import 'package:buy_buddy_user_app/core/utils/app_images.dart';
 import 'package:flutter/material.dart';
 
 class CustomButtonGmail extends StatelessWidget {
@@ -39,8 +40,12 @@ class CustomButtonGmail extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Icon(Icons.email_outlined),
-
+            Image.asset(
+              AppImages.imagesGoogleLogo,
+              fit: BoxFit.cover,
+              height: 24,
+              width: 24,
+            ),
             Text(
               text,
               style: TextStyle(

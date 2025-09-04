@@ -25,6 +25,7 @@ dependencies:
   path_provider: ^2.1.5 
   easy_localization: ^3.0.8
   google_fonts: ^6.3.1
+  modal_progress_hud_nsn: ^0.5.1
 
 dev_dependencies:
   flutter_test:
@@ -46,12 +47,12 @@ flutter:
 #   field_prefix: null
 #   classname: AppSvgs
 
-# flutter_assets:
-#   assets_path: assets/images
-#   output_path: lib/core/utils
-#   filename: app_images.dart
-#   field_prefix: null
-#   classname: AppImages
+flutter_assets:
+  assets_path: assets/images
+  output_path: lib/core/utils
+  filename: app_images.dart
+  field_prefix: null
+  classname: AppImages
 
 # flutter_assets:
 #   assets_path: assets/animations

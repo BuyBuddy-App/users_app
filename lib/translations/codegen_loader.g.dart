@@ -1,8 +1,21 @@
-// DO NOT EDIT. This is code generated via package:easy_localization/generate.dart
-
-// ignore_for_file: constant_identifier_names
-
 abstract class LocaleKeys {
+  // validation
+  static const validationFieldIsRequired = "validation.field_is_required";
+  static const validationEmailIsRequired = "validation.email_is_required";
+  static const validationInvalidEmail = "validation.invalid_email";
+  static const validationPasswordIsRequired = "validation.password_is_required";
+  static const validationPasswordTooShort = "validation.password_too_short";
+  static const validationPhoneIsRequired = "validation.phone_is_required";
+  static const validationInvalidPhone = "validation.invalid_phone";
+  static const validationAgeIsRequired = "validation.age_is_required";
+  static const validationInvalidAge = "validation.invalid_age";
+  static const validationAgeTooYoung = "validation.age_too_young";
+  static const validationAgeTooOld = "validation.age_too_old";
+  static const validationConfirmPasswordIsRequired =
+      "validation.confirm_password_is_required";
+  static const validationPasswordsDoNotMatch =
+      "validation.passwords_do_not_match";
+
   // auth_initial
   static const authInitialName = "auth.auth_initial.name";
   static const authInitialHook = "auth.auth_initial.hook";

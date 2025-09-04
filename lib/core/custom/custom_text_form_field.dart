@@ -11,6 +11,7 @@ class CustomTextFormField extends StatelessWidget {
   final String Function(String?)? validator;
   final TextEditingController? controller;
   final VoidCallback? onSuffixTap;
+  final AutovalidateMode? autovalidateMode;
 
   const CustomTextFormField({
     super.key,
@@ -23,11 +24,12 @@ class CustomTextFormField extends StatelessWidget {
     this.validator,
     this.controller,
     this.onSuffixTap,
+    this.autovalidateMode,
   });
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: 56,
       width: double.infinity,
       child: TextFormField(
@@ -35,7 +37,7 @@ class CustomTextFormField extends StatelessWidget {
         keyboardType: keyboardType,
         obscureText: obscureText,
         validator: validator,
-
+        autovalidateMode: autovalidateMode,
         decoration: InputDecoration(
           filled: true,
           fillColor: AppColors.buttonBackground,
