@@ -56,12 +56,16 @@ abstract class LocaleKeys {
   static const authSignUpCreateAccount =
       "auth.auth_sign_up.create_your_new_account";
   static const authSignUpFullName = "auth.auth_sign_up.full_name";
-  static const authSignUpFullNameError = "auth.auth_sign_up.full_name_error";
+  static const authSignUpFullNameHint = "auth.auth_sign_up.full_name_hint";
   static const authSignUpEmail = "auth.auth_sign_up.email";
+  static const authSignUpEmailHint = "auth.auth_sign_up.email_hint";
   static const authSignUpUserName = "auth.auth_sign_up.user_name";
-  static const authSignUpUserNameError = "auth.auth_sign_up.user_name_error";
+  static const authSignUpUserNameHint = "auth.auth_sign_up.user_name_hint";
+  static const authSignUpPassword = "auth.auth_sign_up.password";
+  static const authSignUpPasswordHint = "auth.auth_sign_up.password_hint";
   static const authSignUpPrivacyAgreement =
       "auth.auth_sign_up.privacy_agreement";
+  static const authSignUpLogin = "auth.auth_sign_up.login";
 
   // auth_verify
   static const authVerifyCheckEmail = "auth.auth_verify.check_email";
