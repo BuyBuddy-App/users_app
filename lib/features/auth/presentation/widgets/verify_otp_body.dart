@@ -9,11 +9,11 @@ import 'package:buy_buddy_user_app/translations/codegen_loader.g.dart';
 import 'package:easy_localization/easy_localization.dart';
 
 class VerifyOtpBody extends StatelessWidget {
-  final String? otpCode = '';
   const VerifyOtpBody({super.key});
 
   @override
   Widget build(BuildContext context) {
+    String otpCode = '';
     return Scaffold(
       body: SizedBox(
         width: double.infinity,
@@ -48,7 +48,7 @@ class VerifyOtpBody extends StatelessWidget {
 
               CustomContainer(
                 width: 361.w,
-                height: 348.w,
+                height: 348.h,
                 child: Column(
                   spacing: 10.w,
                   children: [
@@ -62,15 +62,13 @@ class VerifyOtpBody extends StatelessWidget {
                       ),
                       textAlign: TextAlign.center,
                     ),
-                    SizedBox(height: 5.w),
+                    SizedBox(height: 5.h),
                     Pinput(
                       length: 6,
                       onChanged: (value) => otpCode = value,
                       onCompleted: (value) {
                         // submit otp code with cubit
-
                         otpCode = value;
-                        verifyOtp();
                       },
                       focusedPinTheme: PinTheme(
                         width: 40.w,
@@ -137,6 +135,5 @@ class VerifyOtpBody extends StatelessWidget {
         ),
       ),
     );
-    ;
   }
 }

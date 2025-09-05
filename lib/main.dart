@@ -5,6 +5,8 @@ import 'package:buy_buddy_user_app/core/helpers/on_generate_routes.dart';
 import 'package:buy_buddy_user_app/core/services/custom_bloc_observer.dart';
 import 'package:buy_buddy_user_app/core/services/get_it_service.dart';
 import 'package:buy_buddy_user_app/core/utils/app_themes.dart';
+import 'package:buy_buddy_user_app/features/auth/presentation/screens/fill_profile_screen.dart';
+import 'package:buy_buddy_user_app/features/auth/presentation/screens/password_reset_screen.dart';
 import 'package:buy_buddy_user_app/features/auth/presentation/screens/verify_otp_screen.dart';
 import 'package:device_preview/device_preview.dart';
 import 'package:easy_localization/easy_localization.dart';
@@ -28,7 +30,7 @@ Future<void> main() async {
       fallbackLocale: Locale('en'),
       child: DevicePreview(
         enabled: kDebugMode,
-        builder: (context) => const BuyBuddyUserApp(),
+        builder: (context) => BuyBuddyUserApp(),
       ),
     ),
   );
@@ -57,18 +59,18 @@ class _BuyBuddyUserAppState extends State<BuyBuddyUserApp> {
       child: BlocBuilder<AppThemeCubit, AppThemeState>(
         builder: (context, state) {
           return ScreenUtilInit(
-            designSize: Size(360, 800),
+            designSize: Size(393, 852),
             builder: (context, child) {
               return MaterialApp(
                 debugShowCheckedModeBanner: false,
                 theme: AppTheme.lightTheme,
                 darkTheme: AppTheme.darkTheme,
-                themeMode: appThemeCubit.getTheme(),
+                themeMode: ThemeMode.dark,
                 localizationsDelegates: context.localizationDelegates,
                 supportedLocales: context.supportedLocales,
                 locale: context.locale,
                 onGenerateRoute: onGenerateRoutes,
-                home: VerifyOtpScreen(),
+                home: FillProfileScreen(),
               );
             },
           );
