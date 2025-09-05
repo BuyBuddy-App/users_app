@@ -1,9 +1,11 @@
 import 'package:buy_buddy_user_app/core/utils/app_colors.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class CustomTextFormField extends StatelessWidget {
   final String hintText;
   final String? labelText;
+  final String? helperText;
   final IconData? prefixIcon;
   final IconData? suffixIcon;
   final TextInputType keyboardType;
@@ -17,6 +19,7 @@ class CustomTextFormField extends StatelessWidget {
     super.key,
     required this.hintText,
     this.labelText,
+    this.helperText,
     this.prefixIcon,
     this.suffixIcon,
     this.keyboardType = TextInputType.text,
@@ -30,7 +33,7 @@ class CustomTextFormField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 56,
+      height: helperText == null ? 56 : 76,
       width: double.infinity,
       child: TextFormField(
         controller: controller,
@@ -43,6 +46,12 @@ class CustomTextFormField extends StatelessWidget {
           fillColor: AppColors.buttonBackground,
           hintText: hintText,
           labelText: labelText,
+          helperText: helperText,
+          helperStyle: GoogleFonts.roboto(
+            color: AppColors.onPrimary,
+            fontSize: 12,
+            fontWeight: FontWeight.w400,
+          ),
           prefixIcon: prefixIcon != null ? Icon(prefixIcon) : null,
           suffixIcon: suffixIcon != null
               ? GestureDetector(onTap: onSuffixTap, child: Icon(suffixIcon))
