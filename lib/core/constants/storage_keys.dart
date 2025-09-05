@@ -5,8 +5,5 @@ class StorageKeys {
   static const String isArabic = "isArabic";
   static const String isLoggedIn = "isLoggedIn";
   static const String currentUser = "currentUser";
-}
-
-extension StorageKeysExt on StorageKeys {
-  String get key => toString().split('.').last;
+  static const String userEmail = "userEmail";
 }

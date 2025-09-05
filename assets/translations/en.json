@@ -48,11 +48,15 @@
     "auth_sign_up": {
       "create_your_new_account": "Create your account",
       "full_name": "Full Name",
-      "full_name_error": "Enter your full name",
+      "full_name_hint": "Enter your full name",
       "email": "Email",
+      "email_hint": "Enter your E-mail",
       "user_name": "Username",
-      "user_name_error": "Create your username",
-      "privacy_agreement": "I agree to the Terms & Conditions and Privacy Policy"
+      "user_name_hint": "Create your user name",
+      "password": "Password",
+      "password_hint": "Create your password",
+      "privacy_agreement": "I agree to the Terms & Conditions and Privacy Policy",
+      "login": "Log in"
     },
     "auth_verify": {
       "check_email": "Check your email",
