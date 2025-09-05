@@ -1,5 +1,4 @@
 import 'dart:developer';
-
 import 'package:buy_buddy_user_app/core/custom/custom_modal_progress_hud.dart';
 import 'package:buy_buddy_user_app/core/helpers/show_custom_snack_bar.dart';
 import 'package:buy_buddy_user_app/core/services/get_it_service.dart';
