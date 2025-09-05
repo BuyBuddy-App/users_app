@@ -9,11 +9,11 @@ import 'package:buy_buddy_user_app/translations/codegen_loader.g.dart';
 import 'package:easy_localization/easy_localization.dart';
 
 class VerifyOtpBody extends StatelessWidget {
-  final String? otpCode = '';
   const VerifyOtpBody({super.key});
 
   @override
   Widget build(BuildContext context) {
+    String otpCode;
     return Scaffold(
       body: SizedBox(
         width: double.infinity,
@@ -70,7 +70,6 @@ class VerifyOtpBody extends StatelessWidget {
                         // submit otp code with cubit
 
                         otpCode = value;
-                        verifyOtp();
                       },
                       focusedPinTheme: PinTheme(
                         width: 40.w,
@@ -137,6 +136,5 @@ class VerifyOtpBody extends StatelessWidget {
         ),
       ),
     );
-    ;
   }
 }
