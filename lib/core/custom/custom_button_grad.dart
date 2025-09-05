@@ -1,5 +1,6 @@
 import 'package:buy_buddy_user_app/core/utils/app_colors.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CustomButtonGrad extends StatelessWidget {
   final String text;
@@ -24,7 +25,7 @@ class CustomButtonGrad extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 52,
+      height: 52.sp,
       width: double.infinity,
       decoration: BoxDecoration(
         gradient: LinearGradient(colors: AppColors.gradColors),

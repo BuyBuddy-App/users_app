@@ -1,5 +1,6 @@
 import 'package:buy_buddy_user_app/core/utils/app_colors.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class CustomTextFormField extends StatelessWidget {
@@ -36,6 +37,7 @@ class CustomTextFormField extends StatelessWidget {
       height: helperText == null ? 56 : 76,
       width: double.infinity,
       child: TextFormField(
+        style: TextStyle(fontSize: 16.sp),
         controller: controller,
         keyboardType: keyboardType,
         obscureText: obscureText,
