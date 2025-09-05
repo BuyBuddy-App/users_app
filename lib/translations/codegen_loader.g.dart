@@ -82,4 +82,6 @@ abstract class LocaleKeys {
       "auth.auth_profile.phone_number_error";
   static const authProfileGender = "auth.auth_profile.gender";
   static const authProfileSelectGender = "auth.auth_profile.select_gender";
+  static const authProfileMale = "auth.auth_profile.male";
+  static const authProfileFemale = "auth.auth_profile.female";
 }

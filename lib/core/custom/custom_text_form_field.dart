@@ -4,7 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class CustomTextFormField extends StatelessWidget {
-  final String hintText;
+  final String? hintText;
   final String? labelText;
   final String? helperText;
   final IconData? prefixIcon;
@@ -18,7 +18,7 @@ class CustomTextFormField extends StatelessWidget {
 
   const CustomTextFormField({
     super.key,
-    required this.hintText,
+    this.hintText,
     this.labelText,
     this.helperText,
     this.prefixIcon,

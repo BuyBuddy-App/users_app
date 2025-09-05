@@ -1,6 +1,7 @@
 import 'package:buy_buddy_user_app/core/utils/app_colors.dart';
 import 'package:buy_buddy_user_app/core/utils/app_images.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CustomButtonGmail extends StatelessWidget {
   final String text;
@@ -43,8 +44,8 @@ class CustomButtonGmail extends StatelessWidget {
             Image.asset(
               AppImages.imagesGoogleLogo,
               fit: BoxFit.cover,
-              height: 24,
-              width: 24,
+              height: 30.h,
+              width: 30.w,
             ),
             Text(
               text,

@@ -71,7 +71,9 @@
       "phone_number": "Phone Number",
       "phone_number_error": "Enter your phone number",
       "gender": "Gender",
-      "select_gender": "Select your gender"
+      "select_gender": "Select your gender",
+      "female":"Female",
+      "male":"Male"
     }
   }
 }
