@@ -58,4 +58,40 @@ class AuthRepoImpl extends AuthRepo {
       return Left(CustomException());
     }
   }
+
+  @override
+  Future<Either<Failure, void>> signUp({
+    required Map<String, dynamic> data,
+  }) async {
+    try {
+      await apiConsumer.post(EndPoints.signUp, data: data);
+
+      await AppStorageHelper.setString(
+        StorageKeys.userEmail,
+        data[ApiKeys.email],
+      );
+
+      return const Right(null);
+    } on ConnectionException catch (e) {
+      return Left(CustomException(message: e.message));
+    } on ServerException catch (e) {
+      if (e.errModel.message == "user already found!") {
+        return Left(
+          CustomException(
+            message: "An account with this email already exists.",
+          ),
+        );
+      } else if (e.errModel.message == "user with this number already found!") {
+        return Left(
+          CustomException(
+            message:
+                "This phone number is already linked to an existing account.",
+          ),
+        );
+      }
+      return Left(CustomException());
+    } catch (e) {
+      return Left(CustomException());
+    }
+  }
 }

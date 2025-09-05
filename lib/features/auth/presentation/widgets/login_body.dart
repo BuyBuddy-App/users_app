@@ -67,7 +67,7 @@ class _LoginBodyState extends State<LoginBody> {
                   padding: EdgeInsets.all(15),
                   margin: EdgeInsets.all(10),
                   decoration: BoxDecoration(
-                    color: Color(0xff131313),
+                    color: AppColors.neutralSecondBackground,
                     borderRadius: BorderRadius.circular(20),
                   ),
                   child: Form(

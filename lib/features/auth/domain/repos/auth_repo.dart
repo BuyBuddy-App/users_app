@@ -6,4 +6,7 @@ abstract class AuthRepo {
     required String email,
     required String password,
   });
+  Future<Either<Failure, void>> signUp({
+    required Map<String, dynamic> data,
+  });
 }
