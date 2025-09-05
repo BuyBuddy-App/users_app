@@ -60,7 +60,7 @@ class _PasswordResetBodyState extends State<PasswordResetBody> {
               VerticalGap(100.h),
               CustomContainer(
                 width: double.infinity,
-                height: 308.h,
+                height: 350.h,
                 child: Form(
                   key: formKey,
                   child: Column(

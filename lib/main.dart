@@ -5,6 +5,7 @@ import 'package:buy_buddy_user_app/core/helpers/on_generate_routes.dart';
 import 'package:buy_buddy_user_app/core/services/custom_bloc_observer.dart';
 import 'package:buy_buddy_user_app/core/services/get_it_service.dart';
 import 'package:buy_buddy_user_app/core/utils/app_themes.dart';
+import 'package:buy_buddy_user_app/features/auth/presentation/screens/fill_profile_screen.dart';
 import 'package:buy_buddy_user_app/features/auth/presentation/screens/password_reset_screen.dart';
 import 'package:buy_buddy_user_app/features/auth/presentation/screens/verify_otp_screen.dart';
 import 'package:device_preview/device_preview.dart';
@@ -69,7 +70,7 @@ class _BuyBuddyUserAppState extends State<BuyBuddyUserApp> {
                 supportedLocales: context.supportedLocales,
                 locale: context.locale,
                 onGenerateRoute: onGenerateRoutes,
-                home: PasswordResetScreen(),
+                home: FillProfileScreen(),
               );
             },
           );
