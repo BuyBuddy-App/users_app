@@ -5,10 +5,12 @@ import 'package:buy_buddy_user_app/core/custom/vertical_gap.dart';
 import 'package:buy_buddy_user_app/core/utils/app_colors.dart';
 import 'package:buy_buddy_user_app/core/utils/app_routes.dart';
 import 'package:buy_buddy_user_app/core/utils/validators.dart';
+import 'package:buy_buddy_user_app/features/auth/presentation/cubits/sign_in_cubit/sign_in_cubit.dart';
 import 'package:buy_buddy_user_app/features/auth/presentation/widgets/auth_switch_widget.dart';
 import 'package:buy_buddy_user_app/translations/codegen_loader.g.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class LoginBody extends StatefulWidget {
@@ -19,7 +21,7 @@ class LoginBody extends StatefulWidget {
 }
 
 class _LoginBodyState extends State<LoginBody> {
-  final AutovalidateMode autovalidateMode = AutovalidateMode.disabled;
+  AutovalidateMode autovalidateMode = AutovalidateMode.disabled;
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
 
   final passwordController = TextEditingController();
@@ -33,6 +35,20 @@ class _LoginBodyState extends State<LoginBody> {
     super.dispose();
     emailController.dispose();
     passwordController.dispose();
+  }
+
+  void submitSignInForm() {
+    if (formKey.currentState!.validate()) {
+      formKey.currentState!.save();
+      BlocProvider.of<SignInCubit>(context).signInWithEmailAndPassword(
+        email: emailController.text,
+        password: passwordController.text,
+      );
+    } else {
+      setState(() {
+        autovalidateMode = AutovalidateMode.always;
+      });
+    }
   }
 
   @override
@@ -82,8 +98,8 @@ class _LoginBodyState extends State<LoginBody> {
                           validator: Validators.validateEmail,
                         ),
                         CustomTextFormField(
-                          hintText: LocaleKeys.authLoginPassword.tr(),
                           controller: passwordController,
+                          hintText: LocaleKeys.authLoginPassword.tr(),
                           validator: Validators.validatePassword,
                         ),
 
@@ -112,7 +128,7 @@ class _LoginBodyState extends State<LoginBody> {
                         ),
                         CustomButtonGrad(
                           text: LocaleKeys.authLogin.tr(),
-                          onPressed: () {},
+                          onPressed: submitSignInForm,
                         ),
                         Row(
                           spacing: 20,
