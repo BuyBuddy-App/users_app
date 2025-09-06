@@ -103,6 +103,7 @@ class _SignUpBodyState extends State<SignUpBody> {
                   child: Column(
                     children: [
                       CustomTextFormField(
+                        controller: nameController,
                         hintText: LocaleKeys.authSignUpFullName.tr(),
                         autovalidateMode: autovalidateMode,
                         keyboardType: TextInputType.name,
@@ -111,6 +112,7 @@ class _SignUpBodyState extends State<SignUpBody> {
                       ),
                       const VerticalGap(16),
                       CustomTextFormField(
+                        controller: emailController,
                         autovalidateMode: autovalidateMode,
                         hintText: LocaleKeys.authSignUpEmail.tr(),
                         keyboardType: TextInputType.emailAddress,
@@ -119,14 +121,16 @@ class _SignUpBodyState extends State<SignUpBody> {
                       ),
                       const VerticalGap(16),
                       CustomTextFormField(
+                        controller: userNameController,
                         hintText: LocaleKeys.authSignUpUserName.tr(),
                         autovalidateMode: autovalidateMode,
-                        keyboardType: TextInputType.phone,
+                        keyboardType: TextInputType.name,
                         validator: Validators.validateNormalText,
                         helperText: LocaleKeys.authSignUpUserNameHint.tr(),
                       ),
                       const VerticalGap(16),
                       CustomTextFormField(
+                        controller: passwordController,
                         autovalidateMode: autovalidateMode,
                         hintText: LocaleKeys.authSignUpPassword.tr(),
                         validator: Validators.validatePassword,
@@ -153,7 +157,7 @@ class _SignUpBodyState extends State<SignUpBody> {
                       ),
                       CustomButtonGrad(
                         text: LocaleKeys.authInitialSignUp.tr(),
-                        onPressed: () {},
+                        onPressed: submitSignUpForm,
                       ),
                       const VerticalGap(16),
                       AuthSwitchWidget(

@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:buy_buddy_user_app/core/custom/custom_button_gmail.dart';
 import 'package:buy_buddy_user_app/core/custom/custom_button_grad.dart';
 import 'package:buy_buddy_user_app/core/custom/custom_text_form_field.dart';
@@ -45,6 +47,7 @@ class _LoginBodyState extends State<LoginBody> {
         password: passwordController.text,
       );
     } else {
+      log("message");
       setState(() {
         autovalidateMode = AutovalidateMode.always;
       });
@@ -57,37 +60,38 @@ class _LoginBodyState extends State<LoginBody> {
       body: SafeArea(
         child: Padding(
           padding: EdgeInsetsGeometry.all(15),
-          child: SingleChildScrollView(
-            child: Column(
-              children: [
-                const VerticalGap(30),
-                Text(
-                  LocaleKeys.authLoginTitle.tr(),
-                  style: GoogleFonts.playfairDisplay(
-                    color: AppColors.onPrimary,
-                    fontSize: 32,
-                    fontWeight: FontWeight.w700,
+          child: Form(
+            key: formKey,
+            autovalidateMode: autovalidateMode,
+            child: SingleChildScrollView(
+              child: Column(
+                children: [
+                  const VerticalGap(30),
+                  Text(
+                    LocaleKeys.authLoginTitle.tr(),
+                    style: GoogleFonts.playfairDisplay(
+                      color: AppColors.onPrimary,
+                      fontSize: 32,
+                      fontWeight: FontWeight.w700,
+                    ),
                   ),
-                ),
-                Text(
-                  LocaleKeys.authLoginYourAccount.tr(),
-                  style: TextStyle(
-                    color: AppColors.onPrimary,
-                    fontSize: 14,
-                    fontWeight: FontWeight.w400,
+                  Text(
+                    LocaleKeys.authLoginYourAccount.tr(),
+                    style: TextStyle(
+                      color: AppColors.onPrimary,
+                      fontSize: 14,
+                      fontWeight: FontWeight.w400,
+                    ),
                   ),
-                ),
-                const VerticalGap(48),
+                  const VerticalGap(48),
 
-                Container(
-                  padding: EdgeInsets.all(15),
-                  margin: EdgeInsets.all(10),
-                  decoration: BoxDecoration(
-                    color: AppColors.neutralSecondBackground,
-                    borderRadius: BorderRadius.circular(20),
-                  ),
-                  child: Form(
-                    key: formKey,
+                  Container(
+                    padding: EdgeInsets.all(15),
+                    margin: EdgeInsets.all(10),
+                    decoration: BoxDecoration(
+                      color: AppColors.neutralSecondBackground,
+                      borderRadius: BorderRadius.circular(20),
+                    ),
                     child: Column(
                       spacing: 10,
                       children: [
@@ -96,16 +100,18 @@ class _LoginBodyState extends State<LoginBody> {
                           hintText: LocaleKeys.authLoginEmail.tr(),
                           keyboardType: TextInputType.emailAddress,
                           validator: Validators.validateEmail,
+                          autovalidateMode: autovalidateMode,
                         ),
                         CustomTextFormField(
                           controller: passwordController,
                           hintText: LocaleKeys.authLoginPassword.tr(),
                           validator: Validators.validatePassword,
+                          autovalidateMode: autovalidateMode,
                         ),
 
                         Row(
                           children: [
-                            Checkbox(value: checkVal, onChanged: (val) {}),
+                            Checkbox(value: checkVal, onChanged: (val) {}), // TODO: apply the same ui and apply logic
                             Expanded(
                               child: Text(
                                 LocaleKeys.authLoginRememberMe.tr(),
@@ -167,8 +173,8 @@ class _LoginBodyState extends State<LoginBody> {
                       ],
                     ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
           ),
         ),

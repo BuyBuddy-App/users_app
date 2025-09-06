@@ -32,11 +32,16 @@ class ApiInterceptor extends Interceptor {
     debugPrint("error: ApiInterceptor.onError()");
     debugPrint("status message: ${err.response?.statusMessage}");
     debugPrint("response data: ${err.response?.data}");
+    debugPrint("response status code: ${err.response?.statusCode}");
 
-    if (err.response?.statusCode == 401 ||
-        err.response?.statusCode == 403 ||
-        err.response?.statusCode == 410) {
+    if (err.response?.statusCode == 401) {
       try {
+        final path = err.requestOptions.path;
+        if (path.contains(EndPoints.login) || path.contains(EndPoints.signUp)) {
+          debugPrint("Login/Signup request failed → skipping refresh handling");
+          return handler.next(err);
+        }
+
         RequestOptions opts = await handleUnAuthorizedException(err);
 
         final clonedRequest = await dio.fetch(opts);
@@ -63,7 +68,7 @@ class ApiInterceptor extends Interceptor {
 
   Future<RequestOptions> handleUnAuthorizedException(DioException err) async {
     debugPrint("error in ApiInterceptors: Unable to verify token");
-    final refreshResponse = await dio.get(EndPoints.getRefreshToken);
+    final refreshResponse = await dio.get(EndPoints.refreshToken);
 
     final newAccessToken = refreshResponse.data[ApiKeys.accessToken];
     await AppStorageHelper.setSecureData(

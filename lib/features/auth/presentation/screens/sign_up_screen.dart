@@ -7,6 +7,8 @@ import 'package:buy_buddy_user_app/core/utils/app_routes.dart';
 import 'package:buy_buddy_user_app/features/auth/domain/repos/auth_repo.dart';
 import 'package:buy_buddy_user_app/features/auth/presentation/cubits/signup_cubits/sign_up_cubit.dart';
 import 'package:buy_buddy_user_app/features/auth/presentation/widgets/sign_up_body.dart';
+import 'package:buy_buddy_user_app/translations/codegen_loader.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -30,13 +32,10 @@ class SignUpBlocConsumerBody extends StatelessWidget {
     return BlocConsumer<SignUpCubit, SignUpState>(
       listener: (context, state) {
         if (state is SignUpFailureState) {
-          showCustomSnackBar(context, state.message);
+          showCustomSnackBar(context, state.message.tr());
         } else if (state is SignUpLoadedState) {
           log("account successfully created");
-          showCustomSnackBar(
-            context,
-            "A verification code has been sent to your email.",
-          );
+          showCustomSnackBar(context, LocaleKeys.messagesSuccessVerificationCodeSent.tr());
           Navigator.pushNamed(context, Routes.verifyOtpScreen);
         }
       },
