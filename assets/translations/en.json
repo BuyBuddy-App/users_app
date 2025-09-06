@@ -73,7 +73,11 @@
       "gender": "Gender",
       "select_gender": "Select your gender",
       "female":"Female",
-      "male":"Male"
+      "male":"Male",
+      "set": "Set",
+      "next":"Next",
+      "select_birth": "Select your birthday",
+      "birthday":"Birthday"
     }
   }
 }

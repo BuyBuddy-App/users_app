@@ -1,9 +1,11 @@
 import 'dart:io';
+import 'package:buy_buddy_user_app/core/custom/custom_button_grad.dart';
 import 'package:buy_buddy_user_app/core/custom/custom_circle_grad.dart';
 import 'package:buy_buddy_user_app/core/custom/custom_container.dart';
 import 'package:buy_buddy_user_app/core/custom/custom_text_form_field.dart';
 import 'package:buy_buddy_user_app/core/custom/vertical_gap.dart';
 import 'package:buy_buddy_user_app/core/utils/app_colors.dart';
+import 'package:buy_buddy_user_app/features/auth/presentation/widgets/birth_date_pick_widget.dart';
 import 'package:buy_buddy_user_app/translations/codegen_loader.g.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
@@ -92,7 +94,7 @@ class _FillProfileScreenState extends State<FillProfileScreen> {
                   clipBehavior: Clip.none,
                   alignment: Alignment.center,
                   children: [
-                    CustomContainer(width: double.infinity, height: 500.h),
+                    CustomContainer(width: double.infinity, height: 600.h),
                     Positioned(
                       top: -40,
                       child: Stack(
@@ -180,7 +182,15 @@ class _FillProfileScreenState extends State<FillProfileScreen> {
                               },
                             ),
 
-                            const SizedBox(height: 24),
+                            const SizedBox(height: 16),
+
+                            BirthDatePickWidget(),
+
+                            const SizedBox(height: 25),
+                            CustomButtonGrad(
+                              text: LocaleKeys.authProfileNext.tr(),
+                              onPressed: () {},
+                            ),
                           ],
                         ),
                       ),

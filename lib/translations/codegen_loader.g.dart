@@ -84,4 +84,8 @@ abstract class LocaleKeys {
   static const authProfileSelectGender = "auth.auth_profile.select_gender";
   static const authProfileMale = "auth.auth_profile.male";
   static const authProfileFemale = "auth.auth_profile.female";
+  static const authProfileSet = "auth.auth_profile.set";
+  static const authProfileNext = "auth.auth_profile.next";
+  static const authProfileSelectBirth = "auth.auth_profile.select_birth";
+  static const authProfileBirth = "auth.auth_profile.birthday";
 }
