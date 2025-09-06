@@ -6,6 +6,8 @@ import 'package:buy_buddy_user_app/core/utils/app_routes.dart';
 import 'package:buy_buddy_user_app/features/auth/domain/repos/auth_repo.dart';
 import 'package:buy_buddy_user_app/features/auth/presentation/cubits/sign_in_cubit/sign_in_cubit.dart';
 import 'package:buy_buddy_user_app/features/auth/presentation/widgets/login_body.dart';
+import 'package:buy_buddy_user_app/translations/codegen_loader.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -29,9 +31,8 @@ class LoginBlocConsumerBody extends StatelessWidget {
     return BlocConsumer<SignInCubit, SignInState>(
       listener: (context, state) {
         if (state is SignInFailureState) {
-          if (state.message !=
-              "user is not active. Please go and verify your email") {
-            showCustomSnackBar(context, state.message);
+          if (state.message != LocaleKeys.messagesFailuresInactiveUser) {
+            showCustomSnackBar(context, state.message.tr());
           } else {
             Navigator.pushNamed(context, Routes.verifyOtpScreen);
           }
