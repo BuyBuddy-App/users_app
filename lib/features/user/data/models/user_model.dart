@@ -39,12 +39,12 @@ class UserModel extends UserEntity {
       'id': id,
       'name': name,
       'email': email,
-      'phone_number': phoneNumber,
-      'profile_image': profileImage,
+      'phoneNumber': phoneNumber,
+      'profileImage': profileImage,
       'gender': gender?.name,
       'birthday': birthday?.toIso8601String(),
-      'created_at': createdAt?.toIso8601String(),
-      'updated_at': updatedAt?.toIso8601String(),
+      'createdAt': createdAt?.toIso8601String(),
+      'updatedAt': updatedAt?.toIso8601String(),
     };
   }
 

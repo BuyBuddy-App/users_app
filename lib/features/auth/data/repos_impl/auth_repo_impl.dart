@@ -5,7 +5,10 @@ import 'package:buy_buddy_user_app/core/constants/storage_keys.dart';
 import 'package:buy_buddy_user_app/core/errors/exceptions.dart';
 import 'package:buy_buddy_user_app/core/errors/failures.dart';
 import 'package:buy_buddy_user_app/core/helpers/app_storage_helper.dart';
+import 'package:buy_buddy_user_app/core/helpers/save_current_user_data_locally.dart';
 import 'package:buy_buddy_user_app/features/auth/domain/repos/auth_repo.dart';
+import 'package:buy_buddy_user_app/features/user/data/models/user_model.dart';
+import 'package:buy_buddy_user_app/features/user/domain/entities/user_entity.dart';
 import 'package:buy_buddy_user_app/translations/codegen_loader.g.dart';
 import 'package:dartz/dartz.dart';
 import 'package:flutter/widgets.dart';
@@ -47,10 +50,14 @@ class AuthRepoImpl extends AuthRepo {
 
       if (e.errModel.message == "Invalid email or password") {
         return Left(
-          CustomException(message: LocaleKeys.messagesFailuresIncorrectCredentials),
+          CustomException(
+            message: LocaleKeys.messagesFailuresIncorrectCredentials,
+          ),
         );
       } else if (e.errModel.message == "Please verify your email to continue") {
-        return Left(CustomException(message: LocaleKeys.messagesFailuresInactiveUser));
+        return Left(
+          CustomException(message: LocaleKeys.messagesFailuresInactiveUser),
+        );
       }
       return Left(CustomException());
     } catch (e) {
@@ -64,12 +71,13 @@ class AuthRepoImpl extends AuthRepo {
     required Map<String, dynamic> data,
   }) async {
     try {
-      await apiConsumer.post(EndPoints.signUp, data: data);
+      final result = await apiConsumer.post(EndPoints.signUp, data: data);
 
-      await AppStorageHelper.setString(
-        StorageKeys.userEmail,
-        data[ApiKeys.email],
-      );
+      final UserEntity currentUser = UserModel.fromJson(
+        result["data"]["account"],
+      ).toEntity();
+
+      await saveCurrentUserDataLocally(user: currentUser);
 
       return const Right(null);
     } on ConnectionException catch (e) {
