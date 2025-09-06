@@ -1,4 +1,14 @@
 {
+  "messages": {
+    "success": {
+      "verification_code_sent": "A verification code has been sent to your email."
+    },
+    "failures": {
+      "incorrect_credentials": "Incorrect email or password. Please try again.",
+      "inactive_user": "User is not active. Please go and verify your email",
+      "unexpected_error": "An unexpected error occurred. Please try again later."
+    }
+  },
   "validation": {
     "field_is_required": "Field is required",
     "email_is_required": "Email is required",
@@ -12,7 +22,8 @@
     "age_too_young": "Age must be 14 or older",
     "age_too_old": "Please enter a realistic age",
     "confirm_password_is_required": "Confirm password is required.",
-    "passwords_do_not_match": "Passwords do not match."
+    "passwords_do_not_match": "Passwords do not match.",
+    "password_must_contain_6_chars": "Password must contain at least 6 characters"
   },
   "auth": {
     "auth_initial": {

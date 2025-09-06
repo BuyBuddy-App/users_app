@@ -1,4 +1,15 @@
 abstract class LocaleKeys {
+  // messages.success
+  static const messagesSuccessVerificationCodeSent =
+      "messages.success.verification_code_sent";
+
+  // messages.failures
+  static const messagesFailuresIncorrectCredentials =
+      "messages.failures.incorrect_credentials";
+  static const messagesFailuresInactiveUser = "messages.failures.inactive_user";
+  static const messagesFailuresUnexpectedError =
+      "messages.failures.unexpected_error";
+
   // validation
   static const validationFieldIsRequired = "validation.field_is_required";
   static const validationEmailIsRequired = "validation.email_is_required";
@@ -15,6 +26,8 @@ abstract class LocaleKeys {
       "validation.confirm_password_is_required";
   static const validationPasswordsDoNotMatch =
       "validation.passwords_do_not_match";
+  static const validationPasswordMustContain6Chars =
+      "validation.password_must_contain_6_chars";
 
   // auth_initial
   static const authInitialName = "auth.auth_initial.name";

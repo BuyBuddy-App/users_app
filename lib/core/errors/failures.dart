@@ -1,4 +1,4 @@
-import 'package:buy_buddy_user_app/core/constants/failure_messages.dart';
+import 'package:buy_buddy_user_app/translations/codegen_loader.g.dart';
 
 abstract class Failure {
   final String message;
@@ -10,7 +10,6 @@ abstract class Failure {
 }
 
 class CustomException extends Failure {
-  const CustomException({
-    String message = FailureMessages.unexpectedError,
-  }) : super(message);
+  const CustomException({String message = LocaleKeys.messagesFailuresUnexpectedError})
+    : super(message);
 }
