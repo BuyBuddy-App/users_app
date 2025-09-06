@@ -1,6 +1,7 @@
 import 'package:buy_buddy_user_app/core/utils/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class CustomButtonGrad extends StatelessWidget {
   final String text;
@@ -17,7 +18,7 @@ class CustomButtonGrad extends StatelessWidget {
     required this.onPressed,
     this.background,
     this.textColor,
-    this.borderRadius = 8,
+    this.borderRadius = 18,
     this.borderWidth = 1,
     this.padding = const EdgeInsets.symmetric(vertical: 14, horizontal: 24),
   });
@@ -25,14 +26,13 @@ class CustomButtonGrad extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 52.sp,
-      width: double.infinity,
+      height: 52.h,
       decoration: BoxDecoration(
         gradient: LinearGradient(colors: AppColors.gradColors),
         borderRadius: BorderRadius.circular(borderRadius),
       ),
       child: Container(
-        margin: EdgeInsets.all(borderWidth), // thickness of border
+        margin: EdgeInsets.all(borderWidth.r),
         decoration: BoxDecoration(
           color: background ?? AppColors.buttonBackground,
           borderRadius: BorderRadius.circular(borderRadius - borderWidth),
@@ -45,10 +45,10 @@ class CustomButtonGrad extends StatelessWidget {
             child: Center(
               child: Text(
                 text,
-                style: TextStyle(
+                style: GoogleFonts.inter(
                   color: textColor ?? AppColors.onPrimary,
-                  fontSize: 16,
-                  fontWeight: FontWeight.w600,
+                  fontSize: 16.sp,
+                  fontWeight: FontWeight.w500,
                 ),
               ),
             ),

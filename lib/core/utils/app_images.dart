@@ -2,8 +2,8 @@
 class AppImages {
   AppImages._();
   
-  /// Assets for imagesGoogleLogo
-  /// assets/images/google_logo.png
-  static const String imagesGoogleLogo = "assets/images/google_logo.png";
+  /// Assets for imagesGoogle
+  /// assets/images/google.png
+  static const String imagesGoogle = "assets/images/google.png";
 }
 
