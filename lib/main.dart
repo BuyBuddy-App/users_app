@@ -9,6 +9,7 @@ import 'package:buy_buddy_user_app/features/auth/presentation/screens/fill_profi
 import 'package:buy_buddy_user_app/features/auth/presentation/screens/initial_screen.dart';
 import 'package:buy_buddy_user_app/features/auth/presentation/screens/password_reset_screen.dart';
 import 'package:buy_buddy_user_app/features/auth/presentation/screens/verify_otp_screen.dart';
+import 'package:buy_buddy_user_app/features/auth/presentation/widgets/birth_date_pick_widget.dart';
 import 'package:device_preview/device_preview.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/foundation.dart';

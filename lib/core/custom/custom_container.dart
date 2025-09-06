@@ -1,16 +1,11 @@
 import 'package:flutter/material.dart';
 
 class CustomContainer extends StatelessWidget {
-  final double width;
-  final double height;
+  final double? width;
+  final double? height;
   final Widget? child;
 
-  const CustomContainer({
-    super.key,
-    required this.width,
-    required this.height,
-    this.child,
-  });
+  const CustomContainer({super.key, this.width, this.height, this.child});
 
   @override
   Widget build(BuildContext context) {

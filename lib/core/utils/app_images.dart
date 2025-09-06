@@ -6,4 +6,3 @@ class AppImages {
   /// assets/images/google.png
   static const String imagesGoogle = "assets/images/google.png";
 }
-
