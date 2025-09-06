@@ -4,11 +4,12 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class CustomTextFormField extends StatelessWidget {
-  final String hintText;
+  final String? hintText;
   final String? labelText;
   final String? helperText;
   final IconData? prefixIcon;
-  final IconData? suffixIcon;
+  final Widget? suffixIcon;
+  final bool? readOnly;
   final TextInputType keyboardType;
   final bool obscureText;
   final String? Function(String?)? validator;
@@ -18,7 +19,8 @@ class CustomTextFormField extends StatelessWidget {
 
   const CustomTextFormField({
     super.key,
-    required this.hintText,
+    this.readOnly,
+    this.hintText,
     this.labelText,
     this.helperText,
     this.prefixIcon,
@@ -37,6 +39,7 @@ class CustomTextFormField extends StatelessWidget {
       // height: helperText == null ? 56 : 76,
       width: double.infinity,
       child: TextFormField(
+        readOnly: readOnly ?? false,
         style: TextStyle(fontSize: 16.sp),
         controller: controller,
         keyboardType: keyboardType,
@@ -56,7 +59,7 @@ class CustomTextFormField extends StatelessWidget {
           ),
           prefixIcon: prefixIcon != null ? Icon(prefixIcon) : null,
           suffixIcon: suffixIcon != null
-              ? GestureDetector(onTap: onSuffixTap, child: Icon(suffixIcon))
+              ? GestureDetector(onTap: onSuffixTap, child: suffixIcon)
               : null,
           contentPadding: const EdgeInsets.symmetric(
             vertical: 14,
