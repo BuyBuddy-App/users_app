@@ -99,6 +99,83 @@ class AuthRepoImpl extends AuthRepo {
       }
       return Left(CustomException());
     } catch (e) {
+      debugPrint("Unexpected error in signUp: $e");
+      return Left(CustomException());
+    }
+  }
+
+  @override
+  Future<Either<Failure, void>> verifyOtp({
+    required String email,
+    required String code,
+  }) async {
+    try {
+      final result = await apiConsumer.post(
+        EndPoints.verifyEmail,
+        data: {ApiKeys.email: email, ApiKeys.code: code},
+      );
+      final accessToken = result[ApiKeys.accessToken];
+      await AppStorageHelper.setSecureData(
+        StorageKeys.accessToken,
+        accessToken,
+      );
+
+      await AppStorageHelper.setBool(StorageKeys.isLoggedIn, true);
+
+      return const Right(null);
+    } on ConnectionException catch (e) {
+      return Left(CustomException(message: e.message));
+    } on ServerException catch (e) {
+      if (e.errModel.message == "Invalid or expired verification code.") {
+        return Left(
+          CustomException(
+            message:
+                "The code you entered is Invalid or expired. Please try again.",
+          ),
+        );
+      } else if (e.errModel.message == "Invalid email") {
+        return Left(
+          CustomException(
+            message: "We couldn’t find an account with this email.",
+          ),
+        );
+      }
+      return Left(CustomException());
+    } catch (e) {
+      debugPrint("Unexpected error in verifyOtp: $e");
+      return Left(CustomException());
+    }
+  }
+
+  @override
+  Future<Either<Failure, void>> resendVerifyOtp({required String email}) async {
+    try {
+      await apiConsumer.post(
+        EndPoints.resendVerifyOtp,
+        data: {ApiKeys.email: email},
+      );
+
+      return const Right(null);
+    } on ConnectionException catch (e) {
+      return Left(CustomException(message: e.message));
+    } on ServerException catch (e) {
+      if (e.errModel.message == "Invalid email") {
+        return Left(
+          CustomException(
+            message: "We couldn’t find an account with this email.",
+          ),
+        );
+      } else if (e.errModel.message == "user already active") {
+        return Left(
+          CustomException(
+            message:
+                "Your account is already active. No further action is needed.",
+          ),
+        );
+      }
+      return Left(CustomException());
+    } catch (e) {
+      debugPrint("Unexpected error in resendVerifyOtp: $e");
       return Left(CustomException());
     }
   }
