@@ -6,7 +6,12 @@
     "failures": {
       "incorrect_credentials": "Incorrect email or password. Please try again.",
       "inactive_user": "User is not active. Please go and verify your email",
-      "unexpected_error": "An unexpected error occurred. Please try again later."
+      "unexpected_error": "An unexpected error occurred. Please try again later.",
+      "account_already_exists": "An account with this email already exists.",
+      "username_already_exists": "This username is already linked to an existing account.",
+      "invalid_or_expired_code": "The code you entered is Invalid or expired. Please try again.",
+      "invalid_email": "We couldn’t find an account with this email.",
+      "user_already_active": "Your account is already active. No further action is needed."
     }
   },
   "validation": {
@@ -83,12 +88,12 @@
       "phone_number_error": "Enter your phone number",
       "gender": "Gender",
       "select_gender": "Select your gender",
-      "female":"Female",
-      "male":"Male",
+      "female": "Female",
+      "male": "Male",
       "set": "Set",
-      "next":"Next",
+      "next": "Next",
       "select_birth": "Select your birthday",
-      "birthday":"Birthday"
+      "birthday": "Birthday"
     }
   }
 }

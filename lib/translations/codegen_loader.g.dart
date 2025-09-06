@@ -9,6 +9,15 @@ abstract class LocaleKeys {
   static const messagesFailuresInactiveUser = "messages.failures.inactive_user";
   static const messagesFailuresUnexpectedError =
       "messages.failures.unexpected_error";
+  static const messagesFailuresAccountAlreadyExists =
+      "messages.failures.account_already_exists";
+  static const messagesFailuresUsernameAlreadyExists =
+      "messages.failures.username_already_exists";
+  static const messagesFailuresInvalidOrExpiredCode =
+      "messages.failures.invalid_or_expired_code";
+  static const messagesFailuresInvalidEmail = "messages.failures.invalid_email";
+  static const messagesFailuresUserAlreadyActive =
+      "messages.failures.user_already_active";
 
   // validation
   static const validationFieldIsRequired = "validation.field_is_required";

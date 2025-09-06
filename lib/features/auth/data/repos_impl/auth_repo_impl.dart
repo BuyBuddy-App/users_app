@@ -83,17 +83,18 @@ class AuthRepoImpl extends AuthRepo {
     } on ConnectionException catch (e) {
       return Left(CustomException(message: e.message));
     } on ServerException catch (e) {
+      // TODO: temporarily
       if (e.errModel.message == "user already found!") {
         return Left(
           CustomException(
-            message: "An account with this email already exists.",
+            message: LocaleKeys.messagesFailuresAccountAlreadyExists,
           ),
         );
-      } else if (e.errModel.message == "user with this number already found!") {
+      } else if (e.errModel.message ==
+          "user with this user name already found!") {
         return Left(
           CustomException(
-            message:
-                "This phone number is already linked to an existing account.",
+            message: LocaleKeys.messagesFailuresUsernameAlreadyExists,
           ),
         );
       }
@@ -129,15 +130,12 @@ class AuthRepoImpl extends AuthRepo {
       if (e.errModel.message == "Invalid or expired verification code.") {
         return Left(
           CustomException(
-            message:
-                "The code you entered is Invalid or expired. Please try again.",
+            message: LocaleKeys.messagesFailuresInvalidOrExpiredCode,
           ),
         );
       } else if (e.errModel.message == "Invalid email") {
         return Left(
-          CustomException(
-            message: "We couldn’t find an account with this email.",
-          ),
+          CustomException(message: LocaleKeys.messagesFailuresInvalidEmail),
         );
       }
       return Left(CustomException());
@@ -159,17 +157,16 @@ class AuthRepoImpl extends AuthRepo {
     } on ConnectionException catch (e) {
       return Left(CustomException(message: e.message));
     } on ServerException catch (e) {
+      // TODO: temporarily
+
       if (e.errModel.message == "Invalid email") {
         return Left(
-          CustomException(
-            message: "We couldn’t find an account with this email.",
-          ),
+          CustomException(message: LocaleKeys.messagesFailuresInvalidEmail),
         );
       } else if (e.errModel.message == "user already active") {
         return Left(
           CustomException(
-            message:
-                "Your account is already active. No further action is needed.",
+            message: LocaleKeys.messagesFailuresUserAlreadyActive,
           ),
         );
       }
