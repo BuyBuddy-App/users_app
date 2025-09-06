@@ -10,7 +10,7 @@ class CustomTextFormField extends StatelessWidget {
   final IconData? suffixIcon;
   final TextInputType keyboardType;
   final bool obscureText;
-  final String Function(String?)? validator;
+  final String? Function(String?)? validator;
   final TextEditingController? controller;
   final VoidCallback? onSuffixTap;
   final AutovalidateMode? autovalidateMode;
@@ -33,7 +33,7 @@ class CustomTextFormField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: helperText == null ? 56 : 76,
+      // height: helperText == null ? 56 : 76,
       width: double.infinity,
       child: TextFormField(
         controller: controller,

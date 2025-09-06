@@ -1,4 +1,3 @@
-
 import 'package:buy_buddy_user_app/features/auth/domain/entities/sign_up_request_entity.dart';
 
 class SignUpRequestModel extends SignUpRequestEntity {
@@ -24,6 +23,7 @@ class SignUpRequestModel extends SignUpRequestEntity {
       "email": email,
       "password": password,
       "userName": userName,
+      "role": "USER",
     };
   }
 
