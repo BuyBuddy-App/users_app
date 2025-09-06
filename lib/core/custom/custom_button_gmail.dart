@@ -20,7 +20,7 @@ class CustomButtonGmail extends StatelessWidget {
     required this.onPressed,
     this.background,
     this.textColor,
-    this.borderRadius = 8,
+    this.borderRadius = 18,
     this.borderWidth = 1,
     this.padding = const EdgeInsets.symmetric(vertical: 14, horizontal: 24),
   });
@@ -28,11 +28,11 @@ class CustomButtonGmail extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 52,
+      height: 52.h,
       width: double.infinity,
       decoration: BoxDecoration(
         color: AppColors.buttonBackground,
-        borderRadius: BorderRadius.circular(borderRadius),
+        borderRadius: BorderRadius.circular(borderRadius.r),
       ),
       child: MaterialButton(
         onPressed: onPressed,
@@ -42,16 +42,16 @@ class CustomButtonGmail extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Image.asset(
-              AppImages.imagesGoogleLogo,
+              AppImages.imagesGoogle,
               fit: BoxFit.cover,
-              height: 30.h,
-              width: 30.w,
+              height: 24.h,
+              width: 24.w,
             ),
             Text(
               text,
               style: TextStyle(
                 color: AppColors.onPrimary,
-                fontSize: 16,
+                fontSize: 16.sp,
                 fontWeight: FontWeight.w500,
               ),
             ),

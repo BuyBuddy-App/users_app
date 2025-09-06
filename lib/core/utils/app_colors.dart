@@ -8,6 +8,7 @@ class AppColors {
   static const Color actionColor = Color(0xffC3B7E1);
   static const Color neutralSecondBackground = Color(0xff131313);
   static const Color checkBoxBorderColor = Color(0xff999999);
+  static const Color verticalDividerColor = Color(0xff333333);
 
   static const List<Color> gradColors = [
     Color(0xffFFCC60),

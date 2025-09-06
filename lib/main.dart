@@ -72,9 +72,9 @@ class _BuyBuddyUserAppState extends State<BuyBuddyUserApp> {
                 supportedLocales: context.supportedLocales,
                 locale: context.locale,
                 onGenerateRoute: onGenerateRoutes,
-                home: FillProfileScreen(),
+                home: InitialScreen(),
               );
-            },
+            }
           );
         },
       ),
